@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page - Exemplo</title>
 
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons (somente ícones, não Bootstrap completo) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <!-- AOS -->
@@ -36,7 +36,7 @@
       transform: scale(0.97);
     }
 
-    /* Customização AOS para entrada/saída */
+    /* Customização AOS para também ter saída */
     [data-aos="fade-right"] {
       transform: translateX(100px);
       opacity: 0;
@@ -61,29 +61,37 @@
     window.addEventListener("load", function() {
       AOS.init({
         duration: 1000,
-        once: false,
+        once: false, // anima de novo ao rolar para trás
       });
     });
   </script>
+
+
 </head>
 <body class="bg-gradient-to-r from-gray-800 to-black text-gray-300">
+
 
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center px-6">
     <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto w-full">
+
       <!-- Coluna Esquerda -->
       <div class="flex flex-col justify-center gap-6">
         <div class="flex justify-center">
           <img src="assets/logo2.png" alt="Logo" class="w-48 md:w-80" loading="lazy">
         </div>
+
         <h1 class="text-3xl md:text-4xl font-bold leading-tight">
           Seu plano de saúde negou um tratamento que você precisava?
           <span class="text-yellow-300">Resolva agora!</span>
         </h1>
+
         <div class="w-20 h-1 bg-yellow-400 rounded"></div>
+
         <h5 class="text-base md:text-lg font-medium">
-          <b>Negativas indevidas</b> de cobertura acontecem todos os dias — em casos de câncer, terapias para autismo, cirurgias essenciais e muitos outros. O que muitos pacientes não sabem é que a lei está do seu lado.
+          <b>Negativas indevidas</b> de cobertura acontecem todos os dias, em casos de câncer, terapias para autismo, cirurgias essenciais e muitos outros. O que muitos pacientes não sabem é que a lei está do seu lado.
         </h5>
+
         <div class="flex justify-center mb-12">
           <a href="https://api.whatsapp.com/send?phone=5511941941969&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20uma%20advogada!"
              class="btn-dourado inline-flex items-center justify-center text-center">
@@ -91,6 +99,7 @@
             &nbsp;&nbsp; Quero falar com um especialista
           </a>
         </div>
+
         <div>
           <a href="#servicos" class="inline-flex items-center gap-2 text-white hover:text-yellow-300 transition">
             <i class="bi bi-chevron-down"></i>
@@ -98,93 +107,157 @@
           </a>
         </div>
       </div>
+
       <!-- Coluna Direita -->
       <div class="flex items-center justify-center">
-        <img src="assets/foto.png" alt="Execução Fiscal - Destaque" 
-             class="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
+        <img src="assets/foto.png" 
+             alt="Execução Fiscal - Destaque" 
+             class="w-full max-w-md md:max-w-lg rounded-lg shadow-lg 
+                [mask-image:linear-gradient(to_bottom,black,transparent)] 
+                [mask-repeat:no-repeat] [mask-size:100%_100%]"
              loading="lazy">
       </div>
+
     </div>
   </section>
+
 
   <!-- Serviços -->
   <section id="servicos" class="py-20 px-6 max-w-6xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
       Em quais situações o advogado em Direito da Saúde pode ajudar?
     </h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg text-center text-gray-100 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-2">• Negativa de cobertura de tratamentos contra câncer</h3>
+    <div class="space-y-16">
+      <!-- 1 -->
+      <div class="flex flex-col md:flex-row items-center md:space-x-8" data-aos="fade-right">
+        <img src="assets/15.png" alt="Negativa de cobertura" class="w-40 md:w-60 rounded-xl shadow-lg" loading="lazy">
+        <h3 class="text-5xl font-semibold text-gray-100 mt-6 md:mt-0">
+          Negativa de Cobertura para Tratamentos Oncológicos
+        </h3>
       </div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg text-center text-gray-100 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-2">• Terapias para pessoas com autismo ou condições raras</h3>
+
+      <!-- 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8" data-aos="fade-left">
+        <img src="assets/16.png" alt="Terapias" class="w-40 md:w-60 rounded-xl shadow-lg" loading="lazy">
+        <h3 class="text-5xl font-semibold text-gray-100 mt-6 md:mt-0">
+          Terapias para Pacientes portadores de Atipicidades ou Condições raras
+        </h3>
       </div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg text-center text-gray-100 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-2">• Internações e cirurgias recusadas pelo plano</h3>
+
+      <!-- 3 -->
+      <div class="flex flex-col md:flex-row items-center md:space-x-8" data-aos="fade-right">
+        <img src="assets/17.png" alt="Internações recusadas" class="w-40 md:w-60 rounded-xl shadow-lg" loading="lazy">
+        <h3 class="text-5xl font-semibold text-gray-100 mt-6 md:mt-0">
+          Internações e Cirurgias Recusadas 
+        </h3>
       </div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg text-center text-gray-100 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-2">• Limitação no tempo de atendimento</h3>
+
+      <!-- 4 -->
+      <div class="flex flex-col md:flex-row-reverse items-center md:space-x-8" data-aos="fade-left">
+        <img src="assets/19.png" alt="Medicamentos de alto custo" class="w-40 md:w-60 rounded-xl shadow-lg" loading="lazy">
+        <h3 class="text-5xl font-semibold text-gray-100 mt-6 md:mt-0">
+          Exclusão de medicamentos de alto custo
+        </h3>
       </div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg text-center text-gray-100 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-2">• Exclusão de medicamentos de alto custo</h3>
+
+      <!-- 5 -->
+      <div class="flex flex-col md:flex-row items-center md:space-x-reverse md:space-x-8" data-aos="fade-right">
+        <img src="assets/18.png" alt="Limitação no tempo de atendimento" class="w-40 md:w-60 rounded-xl shadow-lg" loading="lazy">
+        <h3 class="text-5xl font-semibold text-gray-100 mt-6 md:mt-0">
+          Negativa de Cobertura para Atendimento em Home Care
+        </h3>
       </div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg text-center text-gray-100 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-2">• Cancelamento indevido de plano de saúde</h3>
+
+      <!-- 6 -->
+      <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8" data-aos="fade-left">
+        <img src="assets/20.png" alt="Cancelamento indevido" class="w-40 md:w-60 rounded-xl shadow-lg" loading="lazy">
+        <h3 class="text-5xl font-semibold text-gray-100 mt-6 md:mt-0">
+          Cancelamento indevido de plano de saúde
+        </h3>
       </div>
     </div>
-    <h2 class="text-1xl md:text-2xl font-bold text-center mt-12 mb-12 text-gray-300">
-      Esses são apenas alguns exemplos. Se o seu caso envolve saúde e plano de saúde, existe um caminho jurídico para garantir seus direitos.
+
+    <br><br><br><br>
+    <h2 class="text-1xl md:text-2xl font-bold text-center mb-12 text-gray-300">
+      Esses são apenas alguns exemplos. Se o seu caso envolve saúde publica, ou até mesmo plano de saúde, existe um caminho jurídico para garantir seus direitos.
     </h2>
+
     <div class="flex justify-center mb-12">
       <a href="https://api.whatsapp.com/send?phone=5511941941969&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20uma%20advogada!"
          class="btn-dourado inline-flex items-center justify-center text-center">
         <i class="bi bi-whatsapp"></i>
-        &nbsp;&nbsp; Se este é o seu caso, fale com nossos especialistas
+        &nbsp;&nbsp; Se este é o seu caso, fale com nossos &nbsp;<strong>advogados</strong>&nbsp; especialsitas.
       </a>
     </div>
   </section>
 
+
   <!-- Experiência Section -->
   <section id="experiencia" class="py-20 px-6 max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row items-start gap-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-8">
+
+      <!-- Conteúdo -->
       <div class="flex flex-col gap-4 md:w-5/12">
-        <h2 class="text-3xl md:text-4xl font-bold">Por que confiar sua saúde a quem entende de Direito da Saúde?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Por que confiar sua saúde a quem entende de Direito da Saúde?
+        </h2>
+        
+        <!-- Linha dourada -->
         <div class="w-20 h-1" style="background-color: #BA914D;"></div>
+        
         <p class="text-gray-300">
-          Com sólida formação jurídica e experiência dedicada ao Direito da Saúde, a Dra. Joana Rosa atua como aliada estratégica de pacientes e familiares que enfrentam negativas de planos de saúde. Sua prática vai além da advocacia: é um olhar analítico, crítico e profundamente embasado na legislação e decisões mais atuais dos tribunais.
+          Com uma sólida formação jurídica e experiência dedicada ao Direito da Saúde, a Dra. Joana Rosa atua como aliada estratégica de pacientes e familiares que enfrentam negativas de planos de saúde ou atendimento médico através do Sistema Único de Saúde (SUS). Sua prática vai além da simples advocacia: é um olhar analítico, crítico, humano e profundamente embasado na legislação e nas decisões mais atuais dos tribunais, garantindo segurança e rapidez na busca por tratamentos, medicamentos e procedimentos.
+          <br><br>
+          O compromisso da Dra. Joana é descomplicar o processo e assegurar que cada paciente tenha seus direitos respeitados, para que a prioridade seja o cuidado com a saúde, enquanto ela cuida da defesa jurídica necessária para tornar isso possível.
         </p>
-        <div class="flex justify-center mb-12 mt-6">
-          <a href="https://api.whatsapp.com/send?phone=5511941941969"
+        
+        <!-- Botão WhatsApp -->
+        <div class="flex justify-center mb-12">
+          <a href="https://api.whatsapp.com/send?phone=5511941941969&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20uma%20advogada!"
              class="btn-dourado inline-flex items-center justify-center text-center">
             <i class="bi bi-whatsapp"></i>
-            &nbsp;&nbsp; Fale conosco
+              &nbsp;&nbsp; Fale conosco &nbsp;&nbsp;&nbsp;&nbsp;
           </a>
         </div>
       </div>
+
+      <!-- Imagem opcional à direita -->
       <div class="md:flex-1 hidden md:block">
-        <img src="assets/logo2.png" alt="Logo" class="w-full" loading="lazy">
+        <img src="assets/logo2.png" alt="Logo" class="w-full md:w-800" loading="lazy">
       </div>
+
     </div>
   </section>
+
 
   <!-- Rodapé -->
   <footer class="bg-gray-900 text-white py-8 mt-12">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      
+      <!-- Redes sociais -->
       <div class="flex space-x-6 order-1 md:order-2">
-        <a href="https://api.whatsapp.com/send?phone=5511941941969" target="_blank"
+        <a href="https://api.whatsapp.com/send?phone=5511941941969&text=Ol%C3%A1,%20gostaria%20de%20falar%20com%20um%20especialista!" 
+           target="_blank" 
            class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition">
-          <i class="bi bi-whatsapp text-xl"></i> Whatsapp
+          <i class="bi bi-whatsapp text-xl"></i>
+          Whatsapp
         </a>
-        <a href="https://www.instagram.com/angelomaggion.adv/" target="_blank"
+
+        <a href="https://www.instagram.com/angelomaggion.adv/" 
+           target="_blank" 
            class="flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition">
-          <i class="bi bi-instagram text-xl"></i> Siga-nos
+          <i class="bi bi-instagram text-xl"></i>
+          Siga-nos
         </a>
       </div>
+
+      <!-- Copyright -->
       <div class="text-center mt-6 md:mt-0 order-2 md:order-1">
         <p>Copyright &copy; 2025 Angelo Maggion Advocacia | Todos os direitos reservados.</p>
-        <p class="flex items-center justify-center gap-2 mt-2 text-sm">
+        <p class="flex items-center justify-center gap-2 mt-2 text-sm ">
           Feito com <span class="text-pink-500">💜</span> pela
-          <img src="assets/2205wv-logo.png" alt="Logo" class="h-5 inline-block">
+          <img src="assets/2205wv-logo.png" 
+               alt="Logo" class="h-5 inline-block" loading="lazy">
         </p>
       </div>
     </div>
